@@ -1,7 +1,8 @@
-package com.gpetuhov.android.samplemosbysimplemvi
+package com.gpetuhov.android.samplemosbysimplemvi.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.gpetuhov.android.samplemosbysimplemvi.R
 
 class MainActivity : AppCompatActivity() {
 
