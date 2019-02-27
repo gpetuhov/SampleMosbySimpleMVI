@@ -14,7 +14,7 @@ object GetHelloWorldTextInteractor {
         // Make a call to the repository to get the data
         return Repository.loadHelloWorldText()
             // Create DataState and cast it into MainViewState
-            .map<MainViewState> { MainViewState.DataState(it) }
+            .map<MainViewState> { MainViewState.DataState(it.text) }
             // Emit LoadingState value prior to emitting the data
             .startWith(MainViewState.LoadingState)
             // Do no throw an error - emit the ErrorState instead

@@ -6,6 +6,8 @@ package com.gpetuhov.android.samplemosbysimplemvi.domain.viewstate
 // ViewState is rendered into UI by the presenter.
 // ViewState is immutable (new instance is created each time we need to change UI).
 
+// In MVI ViewState is the MODEL !!!
+
 sealed class MainViewState {
     object LoadingState : MainViewState()
     data class DataState(val greeting: String) : MainViewState()
