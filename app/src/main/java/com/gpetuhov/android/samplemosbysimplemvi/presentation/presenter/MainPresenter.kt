@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit
 // Interactor returns new view state.
 // Presenter pushes view state back to the UI (this is the only place where UI is updated).
 
+// In MVP Presenter may update the UI in many places. In MVI - only when view state changes.
+
 class MainPresenter : MviBasePresenter<MainView, MainViewState>() {
 
     override fun bindIntents() {
@@ -30,7 +32,8 @@ class MainPresenter : MviBasePresenter<MainView, MainViewState>() {
             .doOnNext { Timber.d("Received new state: %s", it) }
             .observeOn(AndroidSchedulers.mainThread())
 
-        // Subscribe to listen to ViewState changes
+        // Subscribe to listen to ViewState changes.
+        // This is the only place, where UI is updated.
         subscribeViewState(helloWorldState, MainView::render)
     }
 
