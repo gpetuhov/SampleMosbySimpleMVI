@@ -21,6 +21,9 @@ import java.util.concurrent.TimeUnit
 // All subscriptions are temporarily unsubscribed when the view is detached,
 // and resubscribed after the view is recreated and reattached (this is done by Mosby)
 
+// In this simple example next view state does NOT depend on the previous one,
+// that's why State Reducer is not used.
+
 class MainPresenter : MviBasePresenter<MainView, MainViewState>() {
 
     // This method is invoked only the first time a View is attached to the Presenter.
