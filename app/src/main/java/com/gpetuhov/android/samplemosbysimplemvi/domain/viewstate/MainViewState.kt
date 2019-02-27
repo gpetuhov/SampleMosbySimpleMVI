@@ -8,6 +8,8 @@ package com.gpetuhov.android.samplemosbysimplemvi.domain.viewstate
 
 // In MVI ViewState is the MODEL !!!
 
+// ViewState can be implemented differently depending on developers preferences
+// (here Kotlin sealed classes are used).
 sealed class MainViewState {
     object LoadingState : MainViewState()
     data class DataState(val greeting: String) : MainViewState()

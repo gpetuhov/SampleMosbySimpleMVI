@@ -12,3 +12,7 @@ Simple example of clean architecture Android app with MVI using Mosby (without S
 https://proandroiddev.com/writing-reactive-apps-with-mvi-f7de70739d59
 
 https://github.com/jshvarts/MosbyMVI
+
+http://hannesdorfmann.com/android/mosby3-mvi-1
+
+http://hannesdorfmann.com/android/mosby3-mvi-2

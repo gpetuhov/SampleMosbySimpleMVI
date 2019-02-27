@@ -17,8 +17,14 @@ import java.util.concurrent.TimeUnit
 
 // In MVP Presenter may update the UI in many places. In MVI - only when view state changes.
 
+// Presenter survives orientation changes.
+// All subscriptions are temporarily unsubscribed when the view is detached,
+// and resubscribed after the view is recreated and reattached (this is done by Mosby)
+
 class MainPresenter : MviBasePresenter<MainView, MainViewState>() {
 
+    // This method is invoked only the first time a View is attached to the Presenter.
+    // It’s not invoked again when the View gets reattached (i.e. after a screen orientation change).
     override fun bindIntents() {
 
         // Subscribe to listen to user intents
@@ -34,6 +40,7 @@ class MainPresenter : MviBasePresenter<MainView, MainViewState>() {
 
         // Subscribe to listen to ViewState changes.
         // This is the only place, where UI is updated.
+        // View is always rendered with the LATEST ViewState.
         subscribeViewState(helloWorldState, MainView::render)
     }
 
